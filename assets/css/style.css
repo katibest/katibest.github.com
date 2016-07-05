@@ -200,6 +200,10 @@ h1, h2, h3, h4, h5, h6 {
 #workwrap.mm {	
 	background: url(../img/work-mf.jpg) no-repeat center top;
 	}
+	
+#workwrap.photo {	
+	background: url(../img/work-photo.jpg) no-repeat center top;
+	}
 
 #workwrap h1 {
 	color:#ffffff;
@@ -208,6 +212,20 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: 4px;
 	font-size: 80px;
 	font-weight: bold;
+}
+
+#workwrap.mm h1 {
+	color:#c9355f;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	letter-spacing: 4px;
+	font-size: 80px;
+	font-weight: bold;
+}
+
+#workwrap.mm h4 {
+	font-weight: 400;
+	color: #c9355f;
 }
 
 #workwrap h4 {
