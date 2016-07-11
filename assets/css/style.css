@@ -205,6 +205,10 @@ h1, h2, h3, h4, h5, h6 {
 	background: url(../img/work-photo.jpg) no-repeat center top;
 	}
 
+#workwrap.motion {	
+	background: url(../img/work-motion.jpg) no-repeat center top;
+	}
+
 #workwrap h1 {
 	color:#ffffff;
 	padding-top: 10px;
