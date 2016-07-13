@@ -208,6 +208,10 @@ h1, h2, h3, h4, h5, h6 {
 #workwrap.motion {	
 	background: url(../img/work-motion.jpg) no-repeat center top;
 	}
+	
+#workwrap.web {	
+	background: url(../img/work.jpg) no-repeat center top;
+	}	
 
 #workwrap h1 {
 	color:#ffffff;
