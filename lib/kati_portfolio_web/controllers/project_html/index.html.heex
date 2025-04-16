@@ -1,0 +1,26 @@
+<.header>
+  Listing Projects
+  <:actions>
+    <.link href={~p"/projects/new"}>
+      <.button>New Project</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="projects" rows={@projects} row_click={&JS.navigate(~p"/projects/#{&1}")}>
+  <:col :let={project} label="Title">{project.title}</:col>
+  <:col :let={project} label="Description">{project.description}</:col>
+  <:col :let={project} label="Image path">{project.image_path}</:col>
+  <:col :let={project} label="Year">{project.year}</:col>
+  <:action :let={project}>
+    <div class="sr-only">
+      <.link navigate={~p"/projects/#{project}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/projects/#{project}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={project}>
+    <.link href={~p"/projects/#{project}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

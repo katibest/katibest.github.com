@@ -1,0 +1,153 @@
+<div class="min-h-screen bg-palemint">
+  <!-- Hero Section -->
+  <section class="bg-periwinkle py-16">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+      <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+        <h1 class="text-white text-3xl md:text-4xl font-bold mb-4">Hello, I'm Kati Best</h1>
+        <div class="w-16 h-1 bg-white mx-auto md:mx-0 mb-6 rounded-full"></div>
+        <div x-data="{
+          roles: ['Teacher', 'Designer', 'Dog Lover', 'Mentor'],
+          idx: 0,
+          flipped: false,
+          get current() { return this.roles[this.idx] },
+          cycle() {
+            this.flipped = true;
+            setTimeout(() => {
+              this.idx = (this.idx + 1) % this.roles.length;
+              this.flipped = false;
+            }, 300);
+          }
+        }" x-init="setInterval(() => cycle(), 2000)">
+          <span x-bind:class="'inline-block bg-goldpeach text-white px-10 py-4 rounded-full font-semibold text-xl mb-6 min-w-[180px] text-center transition-transform duration-300 transform-gpu ' + (flipped ? 'rotate-y-180' : '')" x-text="current"></span>
+        </div>
+        <p class="text-white text-base md:text-lg max-w-md mx-auto md:mx-0">I'm Kati (aka the person behind the computer)! I've been product designer for almost ten years, creating designs that are not only pleasing to the eye but with thoughtful user experience.</p>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <img src="/images/experience.jpg" alt="Kati Best collaborating with a colleague on a laptop" class="rounded-2xl shadow-lg w-72 h-72 object-cover">
+      </div>
+    </div>
+  </section>
+  <!-- Wavy Divider -->
+  <div class="w-full overflow-hidden leading-none rotate-180" style="height: 48px; margin-top: -1px;">
+    <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#d3e7e2" d="M0,0 C480,48 960,0 1440,48 L1440,48 L0,48 Z"></path></svg>
+  </div>
+
+  <!-- About Section -->
+  <section class="bg-white py-12">
+    <div class="container mx-auto px-4">
+      <p class="text-gray-700 text-base md:text-lg max-w-3xl mx-auto">Throughout my career, I've had the privilege of working on a wide range of projects, from innovative start-ups to established enterprises. My design philosophy centers on the user—I strive to create solutions that truly meet their needs and deliver meaningful experiences. With a highly adaptable approach and a track record of leading projects to success, I thrive on collaborating with teams to turn complex ideas into intuitive, impactful designs.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="bg-palemint py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-periwinkle mb-8 text-center">Latest Projects</h2>
+      <div class="flex overflow-x-auto gap-8 max-w-full scrollbar-hide pb-4">
+        <a href="/projects/engagewit" class="bg-white rounded-2xl shadow p-6 flex-shrink-0 w-80 flex flex-col items-start hover:shadow-lg transition">
+          <img src="/images/project1.png" alt="EngageWIT" class="rounded mb-4 w-full">
+          <span class="text-periwinkle font-semibold">EngageWIT</span>
+          <span class="text-gray-400 text-xs">2020</span>
+        </a>
+        <a href="/projects/family-nurturing-center" class="bg-white rounded-2xl shadow p-6 flex-shrink-0 w-80 flex flex-col items-start hover:shadow-lg transition">
+          <img src="/images/project2.png" alt="Family Nurturing Center" class="rounded mb-4 w-full">
+          <span class="text-periwinkle font-semibold">Family Nurturing Center</span>
+          <span class="text-gray-400 text-xs">2023/2024</span>
+        </a>
+        <a href="/projects/patient-reach-360" class="bg-white rounded-2xl shadow p-6 flex-shrink-0 w-80 flex flex-col items-start hover:shadow-lg transition">
+          <img src="/images/project3.png" alt="Patient Reach 360" class="rounded mb-4 w-full">
+          <span class="text-periwinkle font-semibold">Patient Reach 360</span>
+          <span class="text-gray-400 text-xs">2020</span>
+        </a>
+        <a href="/projects/other-project" class="bg-white rounded-2xl shadow p-6 flex-shrink-0 w-80 flex flex-col items-start hover:shadow-lg transition">
+          <img src="/images/project4.png" alt="Project 4" class="rounded mb-4 w-full">
+          <span class="text-periwinkle font-semibold">Other Project</span>
+          <span class="text-gray-400 text-xs">2022</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Wavy Divider -->
+  <div class="w-full overflow-hidden leading-none" style="height: 48px; margin-bottom: -1px;">
+    <svg viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#d3e7e2" d="M0,0 C480,48 960,0 1440,48 L1440,48 L0,48 Z"></path></svg>
+  </div>
+
+  <!-- Experience Section -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-periwinkle mb-8">Experience</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <ul class="text-gray-700 space-y-2">
+          <li>2016 to Present – Launch Scout, Senior UX Designer</li>
+          <li>Fall 2024 – Northern Kentucky University, Adjunct Professor</li>
+          <li>2015-2016 – Western & Southern, Web Designer</li>
+          <li>2014-2015 – Spicefire, Branding/Packaging Designer</li>
+          <li>2013 – Graduated from Northern Kentucky University</li>
+        </ul>
+        <div class="flex justify-center items-center">
+          <img src="/images/experience.jpg" alt="Experience" class="rounded-2xl shadow-lg w-72 h-48 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet the Team Section -->
+  <section class="bg-periwinkle py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-white mb-2">Meet the team</h2>
+      <p class="text-white mb-8">CINCINNATI OFFICE AKA MY HOME</p>
+      <div class="flex flex-col md:flex-row gap-6 max-w-4xl mx-auto items-center md:items-start">
+        <div class="flex flex-col items-center w-full md:w-1/2">
+          <img src="/images/me-1.jpg" alt="Kati Best" class="rounded-2xl shadow-lg w-48 h-72 object-cover mb-2">
+          <span class="inline-block bg-goldpeach text-white px-4 py-1 rounded-full font-semibold">KATI BEST</span>
+        </div>
+        <div class="flex flex-col gap-6 w-full md:w-1/2">
+          <div class="flex flex-col items-center">
+            <img src="/images/birthday-3.jpg" alt="Rocket Dog" class="rounded-2xl shadow-lg w-32 h-32 object-cover mb-2">
+            <span class="inline-block bg-goldpeach text-white px-4 py-1 rounded-full font-semibold">ROCKET DOG</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="/images/ryder.jpg" alt="Ryder" class="rounded-2xl shadow-lg w-32 h-32 object-cover mb-2">
+            <span class="inline-block bg-goldpeach text-white px-4 py-1 rounded-full font-semibold">RYDER</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-white text-xs mt-4">* The non humans do not distract from my work but do add a touch of joy to meetings</p>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center">
+        <div class="bg-palemint rounded-2xl p-8 shadow-lg max-w-xl w-full mb-8">
+          <p class="text-periwinkle font-semibold mb-2">The clickable prototype has received positive feedback from investors and internal stakeholders. The project has been efficient from onboarding to the handoff. Gaslight helps the client in the business model's actual formation, and their dedication has also been most impressive.</p>
+          <span class="text-gray-500 text-sm">KEVIN FROM ENGAGEWIT</span>
+        </div>
+        <h2 class="text-2xl font-bold text-palemin mt-8">Client &Co-Worker Reviews</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-palemint py-8">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-periwinkle font-bold mb-2">CONNECT</h3>
+        <p class="text-gray-700">best.kati@gmail.com</p>
+        <p class="text-gray-700">513-257-3664</p>
+      </div>
+      <div>
+        <h3 class="text-periwinkle font-bold mb-2">PORTFOLIO</h3>
+        <ul class="text-gray-700">
+          <li>Family Nurturing Center</li>
+          <li>Patient Reach 360</li>
+          <li>Abbie</li>
+          <li>Launch Scout</li>
+          <li>EngageWIT</li>
+          <li>Photography</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div>

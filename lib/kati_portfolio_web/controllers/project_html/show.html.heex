@@ -1,0 +1,106 @@
+<.header>
+  Project {@project.id}
+  <:subtitle>This is a project record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/projects/#{@project}/edit"}>
+      <.button>Edit project</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<!-- Hero Section -->
+<section class="w-full bg-[#8388D6] py-16 relative">
+  <div class="container mx-auto px-8 flex flex-col md:flex-row">
+    <div class="w-full md:w-1/2 pr-4 mb-8 md:mb-0">
+      <div class="aspect-[4/3] bg-gray-200">
+        <img
+          src={@project.image_path || ~p"/images/placeholder.jpg"}
+          alt={@project.title <> " main image"}
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+    <div class="w-full md:w-1/2 pl-4">
+      <div class="aspect-[4/3] bg-gray-200">
+        <img
+          src={@project.image_path || ~p"/images/placeholder.jpg"}
+          alt={@project.title <> " secondary image"}
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Content Section -->
+<div class="max-w-6xl mx-auto px-8 py-12">
+  <h1 class="text-4xl font-bold mb-6"><%= @project.title %></h1>
+  
+  <div class="mb-12">
+    <p class="mb-12">
+      <%= @project.description %>
+    </p>
+
+    <!-- Three column images grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+      <div class="aspect-square bg-gray-200">
+        <img
+          src={@project.image_path || ~p"/images/placeholder.jpg"}
+          alt="Project example 1"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="aspect-square bg-gray-200">
+        <img
+          src={@project.image_path || ~p"/images/placeholder.jpg"}
+          alt="Project example 2"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="aspect-square bg-gray-200">
+        <img
+          src={@project.image_path || ~p"/images/placeholder.jpg"}
+          alt="Project example 3"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- The Solution section -->
+    <h2 class="text-3xl font-bold mb-6">The Solution</h2>
+    <p class="mb-12">
+      Intro text goes here lorem ipsum. Intro text goes here lorem ipsum. Intro text goes here lorem ipsum. Intro text goes here lorem ipsum. Intro text goes here lorem ipsum. Intro text goes here lorem ipsum. Intro text goes here lorem ipsum. Intro text goes here lorem ipsum. Intro text goes here lorem ipsum. Intro text goes here lorem ipsum. Intro text goes here lorem ipsum.
+    </p>
+
+    <!-- Final three column images grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="aspect-square bg-gray-200">
+        <img
+          src={@project.image_path || ~p"/images/placeholder.jpg"}
+          alt="Solution example 1"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="aspect-square bg-gray-200">
+        <img
+          src={@project.image_path || ~p"/images/placeholder.jpg"}
+          alt="Solution example 2"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="aspect-square bg-gray-200">
+        <img
+          src={@project.image_path || ~p"/images/placeholder.jpg"}
+          alt="Solution example 3"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-8">
+    <.link navigate={~p"/projects"} class="text-[#8388D6] hover:text-[#7AC0A5]">
+      Back to projects
+    </.link>
+  </div>
+</div>
