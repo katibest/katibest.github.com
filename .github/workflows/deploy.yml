@@ -37,12 +37,20 @@ jobs:
 
       - name: Build assets
         run: |
+          # Create necessary directories
+          mkdir -p priv/static/images
+          mkdir -p priv/static/assets
+          
+          # Copy static assets
+          cp -r priv/static/images/* priv/static/images/ 2>/dev/null || true
+          cp -r assets/static/* priv/static/ 2>/dev/null || true
+          
+          # Build and digest assets
           mix assets.deploy
           mix phx.digest
-          # Ensure static directory exists
-          mkdir -p priv/static/images
-          # Copy any static assets if they exist
-          cp -r assets/static/* priv/static/ 2>/dev/null || true
+          
+          # Ensure CNAME is present
+          echo "katibestdesign.com" > priv/static/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
