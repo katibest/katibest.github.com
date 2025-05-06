@@ -4,7 +4,8 @@ gem "jekyll", "~> 4.3.3"
 gem "kramdown", "~> 2.4.0"  # Updated to secure version
 gem "webrick", "~> 1.8"    # Required for Ruby 3.0+
 gem "minima", "~> 2.5"
-gem "addressable", "~> 2.8.5"  # Updated to secure version
+gem "addressable", "~> 2.8.7"  # Updated to latest secure version
+gem "public_suffix", "~> 6.0.2"  # Required by addressable
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
