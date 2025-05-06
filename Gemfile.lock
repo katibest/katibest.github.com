@@ -76,6 +76,7 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  addressable (~> 2.8.5)
   jekyll (~> 4.3.3)
   jekyll-feed (~> 0.12)
   jekyll-seo-tag (~> 2.8)
