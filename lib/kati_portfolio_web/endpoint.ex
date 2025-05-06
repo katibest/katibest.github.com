@@ -22,8 +22,15 @@ defmodule KatiPortfolioWeb.Endpoint do
   plug Plug.Static,
     at: "/",
     from: :kati_portfolio,
-    gzip: false,
-    only: KatiPortfolioWeb.static_paths()
+    gzip: true,
+    only: ~w(assets fonts images favicon.ico robots.txt)
+
+  # Serve at "/images" the static files from "priv/static/images" directory.
+  plug Plug.Static,
+    at: "/images",
+    from: :kati_portfolio,
+    gzip: true,
+    only: ~w(images)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
