@@ -1,0 +1,19 @@
+title: Kati Best Design
+description: Portfolio website of Kati Best
+baseurl: ""
+url: "https://katibestdesign.com"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .github 
