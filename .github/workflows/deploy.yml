@@ -54,6 +54,15 @@ jobs:
           mix assets.deploy
           mix phx.digest
           
+          # Generate static HTML files
+          mix phx.gen.release --docker
+          MIX_ENV=prod mix release
+          _build/prod/rel/kati_portfolio/bin/kati_portfolio eval "KatiPortfolio.Release.migrate()"
+          _build/prod/rel/kati_portfolio/bin/kati_portfolio eval "KatiPortfolio.Release.rollback()"
+          
+          # Copy the generated HTML files
+          cp -r _build/prod/rel/kati_portfolio/lib/kati_portfolio-0.1.0/priv/static/* priv/static/
+          
           # Ensure CNAME is present
           echo "katibestdesign.com" > priv/static/CNAME
           
