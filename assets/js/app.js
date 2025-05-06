@@ -24,8 +24,18 @@ import topbar from "../vendor/topbar"
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {
-  longPollFallbackMs: 2500,
-  params: {_csrf_token: csrfToken}
+  params: {_csrf_token: csrfToken},
+  hooks: {
+    mounted() {
+      // Handle base URL for GitHub Pages
+      const baseUrl = window.location.hostname === 'katibest.github.io' ? '/kati_portfolio' : '';
+      document.querySelectorAll('a').forEach(link => {
+        if (link.getAttribute('href')?.startsWith('/')) {
+          link.setAttribute('href', baseUrl + link.getAttribute('href'));
+        }
+      });
+    }
+  }
 })
 
 // Show progress bar on live navigation and form submits
