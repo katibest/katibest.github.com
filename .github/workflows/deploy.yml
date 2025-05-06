@@ -12,47 +12,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Elixir
-        uses: erlef/setup-beam@v1
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          elixir-version: '1.15.7'
-          otp-version: '26.2.1'
+          ruby-version: '3.1'
+          bundler-cache: true
 
-      - name: Restore dependencies cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            deps
-            _build
-          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
-          restore-keys: ${{ runner.os }}-mix-
-
-      - name: Install dependencies
-        run: mix deps.get
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install npm dependencies
-        run: |
-          cd assets
-          npm install
-
-      - name: Build assets
-        run: |
-          cd assets
-          npm run deploy
-          cd ..
-          mix assets.deploy
-
-      - name: Build static files
-        run: mix phx.digest
+      - name: Build site
+        run: bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./priv/static
+          publish_dir: ./_site
           force_orphan: true 
