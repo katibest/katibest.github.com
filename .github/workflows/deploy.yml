@@ -32,8 +32,10 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
+          cache-dependency-path: 'assets/package-lock.json'
 
       - name: Install Node.js dependencies
+        working-directory: ./assets
         run: |
           npm ci --prefer-offline --no-audit
           npm install esbuild@0.17.11
